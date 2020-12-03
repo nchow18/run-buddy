@@ -109,3 +109,11 @@ footer a {
     display: inline;
     width: 10%;
 }
+
+.hero-form button {
+    background-color: #024e76;
+    padding: 10px 15px;
+    color: #fce138;
+    border: none;
+    font-size: 16px;
+}
