@@ -8,8 +8,7 @@ header h1 {
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
-    margin: 0 35px;
-    display: inline;
+    margin: 0; 
   }
   
   header a {
@@ -19,10 +18,12 @@ header h1 {
 
   header {
       background-color: teal;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
   }
 
 header nav {
-    float: right;
     margin: 7px 0;
 }
 
