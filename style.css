@@ -9,6 +9,7 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
   
   header a {
@@ -21,6 +22,15 @@ header h1 {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      position: -webkit-sticky;
+      z-index: 1;
+      background-image: url("./assets/images/hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-position: 80%;
   }
 
 header nav {
@@ -43,6 +53,14 @@ header nav ul li a {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 body {
@@ -84,6 +102,8 @@ footer a {
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 
 .hero-cta {
@@ -99,10 +119,11 @@ footer a {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .hero-form {
-    background-color: #fce138;
+    background-color: rgba(252,225,56,0.8);
     padding: 20px;
     color: #024e76;
     border-style: solid;
@@ -111,7 +132,15 @@ footer a {
     bottom: 120px;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 15px;
 }
+
+.hero-form input {
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.8);
+}
+
 
 .hero h3 {
     font-size: 25px;
@@ -131,6 +160,12 @@ footer a {
     width: 100%;
     margin-bottom: 1px;
     margin-top: 0;
+    background-color: rgba(255,255,255,0.75);
+}
+
+.hero-form input:focus {
+    background-color: rgba(255,255,255,1);
+    outline: none;
 }
 
 .trainer-before input {
@@ -144,6 +179,11 @@ footer a {
     color: #fce138;
     border: none;
     font-size: 16px;
+    border-radius: 15px;
+}
+
+.hero-form button:hover {
+    background-color: #39a6b2;
 }
 
 .intro p {
@@ -182,11 +222,19 @@ footer a {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step:nth-child(even) {
+    border-bottom: 1px solid #39a6b2;
 }
 
 .step h3 {
@@ -327,6 +375,13 @@ footer a {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.75);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255,255,255,1);
+    outline: none;
 }
 
 .contact-form button {
@@ -337,6 +392,12 @@ footer a {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 15px;
+}
+
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
 }
 
 .contact-info a {
@@ -352,6 +413,7 @@ footer a {
     header {
       padding-bottom: 0;
       justify-content: center;
+      position: relative;
     }
   
     header h1 {
