@@ -31,7 +31,7 @@ header h1 {
       position: sticky;
       top: 0;
       position: -webkit-sticky;
-      z-index: 1;
+      z-index: 9999;
       background-image: url("./assets/images/hero-bg.jpg");
       background-size: cover;
       background-position: center;
@@ -340,24 +340,83 @@ footer a {
     font-size: 23px;
 }
 
-.trainers {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
 .trainer {
     margin: 20px;
     background: var(--secondary-color);
     color: var(--primary-color);
     flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
-.trainer img {
-    width: 100%;
+.trainer:hover .trainer-img::after {
+    opacity: 1;
 }
+
+.trainer:hover .trainer-img h3, .trainer:hover .trainer-img h4 {
+    top: 0px;
+}
+
+.trainer-1 {
+    background-image: url("./assets/images/trainer-1.jpg");
+}
+
+.trainer-2 {
+    background-image: url("./assets/images/trainer-2.jpg");
+}
+
+.trainer-3 {
+    background-image: url("./assets/images/trainer-3.jpg");
+}
+
+.trainer-img {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.trainer-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(252, 225, 56, 0.3), var(--secondary-color));
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+
+  }
+
+.trainer-img h3 {
+    z-index: 4;
+    position: relative;
+    top: 200px;
+    transition: 0.6s;
+}
+
+.trainer-img h4 {
+    z-index: 4;
+    position: relative;
+    top: 200px;
+    transition: 0.6;
+}
+
+.trainer h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.trainer h4 {
+    font-size: 22px;
+}
+
 
 .trainer-bio {
     padding: 25px;
@@ -377,12 +436,14 @@ footer a {
 
 .trainer-bio h3 {
     font-size: 28px;
+    display: none;
 }
 
 .trainer-bio h4 {
     font-weight: lighter;
     font-size: 22px;
     margin-bottom: 15px;
+    display: none;
 }
 
 .trainer-bio p {
@@ -548,6 +609,15 @@ footer a {
     .step-text {
       flex: 100%;  
     }
+
+    
+  .trainer-img h3, .trainer-img h4, .trainer-img::after {
+    display: none;
+  }
+
+  .trainer-bio h3, .trainer-bio h4 {
+    display: block;
+  }
   
   }
   
